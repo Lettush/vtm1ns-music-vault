@@ -1,4 +1,5 @@
 import Default from "../../assets/images/default.jpg";
+import SeeMore from "../../assets/images/placeholder.png";
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -33,8 +34,14 @@ const Home = () => {
           <p>Blessed By Swords (Reprise)</p>
         </Link>
         <Link to="/music/3">
-          <img src={Default} />
+          <img src={Default} alt="Audio 3" />
           <p>Grenada (Unreleased)</p>
+        </Link>
+        <Link to="/music">
+          <img src={SeeMore} alt="Audio 4" />
+          <p style={{ textAlign: "center", fontWeight: "bolder" }}>
+            See More {">>"}
+          </p>
         </Link>
       </div>
     </>
