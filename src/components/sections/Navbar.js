@@ -1,14 +1,20 @@
 import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useEffect, useRef } from "react";
 
 const Navbar = () => {
-  const links = document.querySelector("#mobile-links");
+  const linksRef = useRef();
+
+  useEffect(() => {
+    linksRef.current.style.display = "none";
+  }, [])
+
   const showLinks = () => {
-    links.style.display = "flex";
+    linksRef.current.style.display = "flex";
   };
 
   const hideLinks = () => {
-    links.style.display = "none";
+    linksRef.current.style.display = "none";
   };
 
   return (
@@ -21,7 +27,7 @@ const Navbar = () => {
         onMouseOver={showLinks}
         onMouseLeave={hideLinks}
       />
-      <div id="mobile-links">
+      <div id="mobile-links" ref={linksRef}>
         <Link to="/music"> Music </Link>
         <Link to="/rates"> Rates </Link>
         <Link to="/socials"> Socials </Link>
