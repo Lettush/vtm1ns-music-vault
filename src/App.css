@@ -208,8 +208,12 @@ nav svg {
     right: 20px;
   }
 
-  #desktop-links, #mobile-links {
+  nav div {
     display: none;
+  }
+
+  .links {
+    display: flex;
     flex-direction: column;
   }
 
