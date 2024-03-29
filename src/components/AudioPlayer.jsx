@@ -1,10 +1,14 @@
 import { useRef, useEffect, useState } from "react";
 import WaveSurfer from "wavesurfer.js";
+import {
+  PlayCircleOutlineRounded,
+  PauseCircleOutlineRounded,
+} from "@mui/icons-material";
 
 const formWaveSurferOptions = (ref) => ({
   container: ref,
-  waveColor: "#ccc",
-  progressColor: "#0178ff",
+  waveColor: "#333",
+  progressColor: "#ccc",
   cursorColor: "transparent",
   responsive: true,
   height: 80,
@@ -14,7 +18,7 @@ const formWaveSurferOptions = (ref) => ({
   barGap: 3,
 });
 
-export default function AudioPlayer({ audioFile }) {
+export default function AudioPlayer({ audioFile, name }) {
   // stores mutable values that can change without refreshing the whole page
   const waveformRef = useRef(null);
   const wavesurfer = useRef(null);
@@ -75,16 +79,25 @@ export default function AudioPlayer({ audioFile }) {
   return (
     <div className="song-group">
       {/* Play/Pause button */}
-      <button onClick={handlePlayPause}>Play/Pause</button>
-
-      <span>{formatTime(currentTime)}</span>
+      <div className="audio-info">
+        <div className="play-pause">
+          {!playing ? (
+            <PlayCircleOutlineRounded onClick={handlePlayPause} />
+          ) : (
+            <PauseCircleOutlineRounded onClick={handlePlayPause} />
+          )}
+        </div>
+        <div>
+          <h2>{name}</h2>
+        </div>
+      </div>
 
       <div id="waveform" ref={waveformRef} style={{ width: "100%" }}></div>
 
-      <span>{formatTime(duration)}</span>
+      <div className="time">{formatTime(currentTime)} / {formatTime(duration)}</div>
 
       {/* Volume slider */}
-      <input
+      {/* <input
         type="range"
         name="volume"
         id="volume"
@@ -93,7 +106,7 @@ export default function AudioPlayer({ audioFile }) {
         step="0.05"
         value={muted ? 0 : volume}
         onChange={(e) => handleVolumeChange(parseFloat(e.target.value))}
-      />
+      /> */}
     </div>
   );
 }
