@@ -22,6 +22,7 @@
    */
   -ms-user-select: none;
   user-select: none;
+  cursor: none;
 }
 
 body {
@@ -31,12 +32,39 @@ body {
 }
 
 .section-heading {
+  text-transform: uppercase;
   text-align: center;
+  text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.695);
+  letter-spacing: 0.2rem;
   margin: 40px 0;
 }
 
 a {
   text-decoration: none;
+}
+
+/* Custom Cursor */
+.cursor-dot {
+  width: 5px;
+  height: 5px;
+  background-color: white;
+}
+
+.cursor-outline {
+  width: 30px;
+  height: 30px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.cursor-dot,
+.cursor-outline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 10;
+  pointer-events: none;
 }
 
 /* Header Styling */
@@ -181,7 +209,7 @@ nav {
   margin-bottom: 50px;
   position: sticky;
   background-color: black;
-  z-index: 99;
+  z-index: 9;
   top: 0;
 }
 
@@ -191,6 +219,14 @@ nav a {
   padding: 0.5rem 2rem;
   color: white;
   text-align: center;
+}
+
+nav div a {
+  transition: all 0.5s ease;
+}
+
+nav div a:hover {
+  text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
 }
 
 nav svg {
@@ -262,7 +298,7 @@ nav svg {
   left: 0;
 }
 
-.carousel-item h1{
+.carousel-item h1 {
   color: white;
   z-index: 1;
   text-align: center;
@@ -286,6 +322,13 @@ nav svg {
   .css-1m9128y {
     display: none;
   }
+}
+
+/* Spotify */
+.spotify {
+  display: flex;
+  width: 80%;
+  margin: auto;
 }
 
 /* Song Player */
@@ -374,7 +417,8 @@ footer div a {
   transition: all 0.5s ease;
 }
 
-footer div a img, footer div a svg {
+footer div a img,
+footer div a svg {
   width: 30px;
   height: 30px;
 }
