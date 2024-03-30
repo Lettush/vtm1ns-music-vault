@@ -16,6 +16,21 @@ const Home = () => {
       url: "https://gamebanana.com/mods/373139",
       image: "https://images.gamebanana.com/img/ss/mods/6284270b11dd3.jpg",
     },
+    {
+      name: "Friday Night Funkin': Pibby Corrupted",
+      url: "https://gamebanana.com/mods/344757",
+      image: "https://images.gamebanana.com/img/ss/mods/61c1c14d780cd.jpg",
+    },
+    {
+      name: "Friday Night Funkin' - VS Felix Demo",
+      url: "https://gamebanana.com/mods/350970",
+      image: "https://images.gamebanana.com/img/ss/mods/61e459c976756.jpg",
+    },
+    {
+      name: "Vs. Scorpion",
+      url: "https://gamebanana.com/mods/342603",
+      image: "https://images.gamebanana.com/img/ss/mods/61df14f03c6da.jpg",
+    },
   ];
   return (
     <>
@@ -33,14 +48,7 @@ const Home = () => {
       </header>
       <h1 className="section-heading"> Works </h1>
       <div className="works">
-        <Carousel
-          next={(next, active) =>
-            console.log(`we left ${active}, and are now at ${next}`)
-          }
-          prev={(prev, active) =>
-            console.log(`we left ${active}, and are now at ${prev}`)
-          }
-        >
+        <Carousel>
           {items.map((item, i) => (
             <Item key={i} item={item} />
           ))}
