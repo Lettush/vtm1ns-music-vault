@@ -17,7 +17,6 @@ const Navbar = () => {
       <div ref={links}>
         <Link to="/music"> Music </Link>
         <Link to="/rates"> Rates </Link>
-        <Link to="/socials"> Socials </Link>
       </div>
     </nav>
   );

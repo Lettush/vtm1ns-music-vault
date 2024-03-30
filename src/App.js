@@ -1,12 +1,11 @@
 import "./App.css";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./components/pages/Home";
 import Navbar from "./components/sections/Navbar";
 import MusicDetail from "./components/pages/MusicDetail";
 import Footer from "./components/sections/Footer";
 
 function App() {
-  const location = useLocation();
   return (
     <>
       <Navbar />

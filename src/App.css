@@ -30,6 +30,11 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.section-heading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
 /* Header Styling */
 header {
   width: 100%;
@@ -222,12 +227,14 @@ nav svg {
   }
 }
 
-/* Song Player */
-.samples-heading {
-  text-align: center;
-  margin-bottom: 50px;
+/* Works */
+.works {
+  width: 50%;
+  margin: auto;
+  background-color: black;
 }
 
+/* Song Player */
 .song-group {
   max-width: 80%;
   margin: auto;

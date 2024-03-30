@@ -1,8 +1,22 @@
 import Default from "../../assets/images/default.jpg";
 import SeeMore from "../../assets/images/placeholder.png";
 import { Link } from "react-router-dom";
+import Carousel from "react-material-ui-carousel";
+import Item from "../sections/Item";
 
 const Home = () => {
+  const items = [
+    {
+      name: "Friday Night Farmin: VS Katrine",
+      url: "https://gamebanana.com/mods/313655",
+      image: "https://images.gamebanana.com/img/ss/mods/6116cea0510cb.jpg",
+    },
+    {
+      name: "ASDF Funkin",
+      url: "https://gamebanana.com/mods/373139",
+      image: "https://images.gamebanana.com/img/ss/mods/6284270b11dd3.jpg",
+    },
+  ];
   return (
     <>
       <header>
@@ -17,7 +31,22 @@ const Home = () => {
           Hop, and Experimental sounds.
         </div>
       </header>
-      <h1 className="samples-heading"> Samples </h1>
+      <h1 className="section-heading"> Works </h1>
+      <div className="works">
+        <Carousel
+          next={(next, active) =>
+            console.log(`we left ${active}, and are now at ${next}`)
+          }
+          prev={(prev, active) =>
+            console.log(`we left ${active}, and are now at ${prev}`)
+          }
+        >
+          {items.map((item, i) => (
+            <Item key={i} item={item} />
+          ))}
+        </Carousel>
+      </div>
+      <h1 className="section-heading"> Samples </h1>
       <div className="samples">
         <Link to="/music/1">
           <img

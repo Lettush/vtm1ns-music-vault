@@ -4,7 +4,7 @@ import Audio2 from "../../assets/audio/2.mp3";
 import Audio3 from "../../assets/audio/3.ogg";
 import { useParams } from "react-router-dom";
 
-const MusicDetail = ({ name }) => {
+const MusicDetail = () => {
   const { id } = useParams();
 
   switch (id) {
@@ -14,6 +14,8 @@ const MusicDetail = ({ name }) => {
       return <AudioPlayer audioFile={Audio2} name="Blessed By Swords (Reprise)" />;
     case "3":
       return <AudioPlayer audioFile={Audio3} name="Grenada (Unreleased)" />;
+    default:
+      break;
   }
 };
 

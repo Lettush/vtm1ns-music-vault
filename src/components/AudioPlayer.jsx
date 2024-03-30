@@ -13,7 +13,7 @@ const formWaveSurferOptions = (ref) => ({
   responsive: true,
   height: 80,
   normalize: true,
-  backend: "WebAudio",
+  backend: "MediaElement",
   barWidth: 2,
   barGap: 3,
 });
@@ -24,8 +24,8 @@ export default function AudioPlayer({ audioFile, name }) {
   const wavesurfer = useRef(null);
 
   const [playing, setPlaying] = useState(false);
-  const [volume, setVolume] = useState(1);
-  const [muted, setMuted] = useState(false);
+  const [, setVolume] = useState(1);
+  // const [, setMuted] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
 
@@ -70,11 +70,11 @@ export default function AudioPlayer({ audioFile, name }) {
   };
 
   // Adjust audio volume
-  const handleVolumeChange = (newVolume) => {
-    setVolume(newVolume);
-    wavesurfer.current.setVolume(newVolume);
-    setMuted(newVolume === 0);
-  };
+  // const handleVolumeChange = (newVolume) => {
+  //   setVolume(newVolume);
+  //   wavesurfer.current.setVolume(newVolume);
+  //   setMuted(newVolume === 0);
+  // };
 
   return (
     <div className="song-group">
@@ -94,7 +94,9 @@ export default function AudioPlayer({ audioFile, name }) {
 
       <div id="waveform" ref={waveformRef} style={{ width: "100%" }}></div>
 
-      <div className="time">{formatTime(currentTime)} / {formatTime(duration)}</div>
+      <div className="time">
+        {formatTime(currentTime)} / {formatTime(duration)}
+      </div>
 
       {/* Volume slider */}
       {/* <input
