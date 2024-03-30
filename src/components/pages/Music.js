@@ -3,6 +3,9 @@ const Music = () => {
     <>
       <h1 className="section-heading">Music</h1>
       <div className="spotify">
+        <div>
+          <h1>Spotify</h1>
+        </div>
         <iframe
           title="spotify-frame"
           style={{ borderRadius: "12px" }}

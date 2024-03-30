@@ -22,7 +22,6 @@
    */
   -ms-user-select: none;
   user-select: none;
-  cursor: none;
 }
 
 body {
@@ -41,30 +40,6 @@ body {
 
 a {
   text-decoration: none;
-}
-
-/* Custom Cursor */
-.cursor-dot {
-  width: 5px;
-  height: 5px;
-  background-color: white;
-}
-
-.cursor-outline {
-  width: 30px;
-  height: 30px;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-}
-
-.cursor-dot,
-.cursor-outline {
-  position: fixed;
-  top: 0;
-  left: 0;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  z-index: 10;
-  pointer-events: none;
 }
 
 /* Header Styling */
@@ -327,8 +302,24 @@ nav svg {
 /* Spotify */
 .spotify {
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 80%;
   margin: auto;
+}
+
+.spotify div, .spotify iframe {
+  flex-basis: 50%;
+}
+
+@media screen and (max-width: 700px) {
+  .spotify {
+    flex-direction: column;
+  }
+  
+  .spotify div {
+    margin-bottom: 30px;
+  }
 }
 
 /* Song Player */
