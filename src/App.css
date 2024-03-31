@@ -145,7 +145,7 @@ header .bio {
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
   header h1 {
     font-size: 1.2rem;
   }
@@ -194,7 +194,7 @@ header .bio {
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
   .samples a {
     flex-basis: 100%;
   }
@@ -225,8 +225,10 @@ nav div a {
   transition: all 0.5s ease;
 }
 
-nav div a:hover {
-  text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
+@media screen and (min-width: 769px) {
+  nav div a:hover {
+    text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
+  }
 }
 
 nav svg {
@@ -241,7 +243,7 @@ nav svg {
     1px 1px 0 white;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
   nav {
     flex-direction: column;
   }
@@ -249,8 +251,8 @@ nav svg {
   nav svg {
     display: flex !important;
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 25px;
+    right: 30px;
   }
 
   nav div {
@@ -293,7 +295,7 @@ nav svg {
   margin: 0 5px;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
   .breadcrumbs {
     display: none;
   }
@@ -346,7 +348,7 @@ nav svg {
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
   .carousel-item h1 {
     font-size: 1rem;
   }
@@ -372,7 +374,7 @@ nav svg {
   flex-basis: 50%;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
   .column-layout {
     flex-direction: column;
   }
@@ -406,7 +408,7 @@ nav svg {
   margin: auto;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
   .spotify {
     margin-bottom: 0;
   }

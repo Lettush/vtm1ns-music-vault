@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import YouTube from "../sections/YouTube";
 
 const Music = () => {
-  const [latest, setLatest] = useState("");
+  // const [latest, setLatest] = useState("");
 
   /* Youtube API */
   // useEffect(() => {
