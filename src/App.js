@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 import Home from "./components/pages/Home";
 import Music from "./components/pages/Music";
 import Navbar from "./components/sections/Navbar";
@@ -7,6 +7,7 @@ import MusicDetail from "./components/pages/MusicDetail";
 import Footer from "./components/sections/Footer";
 import Breadcrumbs from "./components/sections/Breadcrumbs";
 import { useState, useEffect } from "react";
+import Rates from "./components/pages/Rates";
 
 function App() {
   const [breadcrumbs, setBreadcrumbs] = useState([]);
@@ -23,8 +24,8 @@ function App() {
     const routesList = currentURL.split("/").slice(1);
     let routes = [{ link: "/", label: "Home" }];
 
-    routesList.map((route) => {
-      if (route != "") {
+    routesList.forEach((route) => {
+      if (route !== "") {
         let label = toTitleCase(route);
         routes.push({ link: `${route}`, label: `${label}` });
       }
@@ -40,7 +41,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/music" element={<Music />} />
+        <Route path="/rates" element={<Rates />} />
         <Route path="/music/:id" element={<MusicDetail />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       <Footer />
     </>
