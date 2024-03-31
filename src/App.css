@@ -126,7 +126,7 @@ header .bio {
   }
 }
 
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 700px) {
   header h1 {
     font-size: 1.2rem;
   }
@@ -222,7 +222,7 @@ nav svg {
     1px 1px 0 white;
 }
 
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 700px) {
   nav {
     flex-direction: column;
   }
@@ -254,7 +254,7 @@ nav svg {
   align-items: center;
   font-size: 14px;
   width: 80%;
-  margin: auto;
+  margin: 30px auto;
   font-size: 1.2rem;
 }
 
@@ -274,7 +274,7 @@ nav svg {
   margin: 0 5px;
 }
 
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 700px) {
   .breadcrumbs {
     display: none;
   }
@@ -327,7 +327,7 @@ nav svg {
   }
 }
 
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 700px) {
   .carousel-item h1 {
     font-size: 1rem;
   }
@@ -358,8 +358,25 @@ nav svg {
     flex-direction: column;
   }
 
+  .vid, .spotify{
+    height: 310px;
+  }
+
   .column-layout div {
     margin-bottom: 30px;
+    flex-basis: 0;
+  }
+
+  .section-line:first-child {
+    margin: 0 auto !important;
+  }
+
+  .section-line {
+    margin-top: 0;
+  }
+
+  .music-heading {
+    margin-bottom: 0;
   }
 }
 
@@ -369,7 +386,7 @@ nav svg {
   margin: auto;
 }
 
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 700px) {
   .spotify {
     margin-bottom: 0;
   }
