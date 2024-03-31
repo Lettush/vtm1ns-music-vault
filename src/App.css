@@ -248,6 +248,38 @@ nav svg {
   }
 }
 
+/* Breadcrumbs */
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  width: 80%;
+  margin: auto;
+  font-size: 1.2rem;
+}
+
+.breadcrumbs a {
+  color: white;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbs .active {
+  font-weight: bold;
+}
+
+.separator {
+  margin: 0 5px;
+}
+
+@media screen and (max-width: 660px) {
+  .breadcrumbs {
+    display: none;
+  }
+}
+
 /* Works */
 .works {
   width: 70%;
