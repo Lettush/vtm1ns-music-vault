@@ -3,6 +3,7 @@ import SeeMore from "../../assets/images/placeholder.png";
 import { Link } from "react-router-dom";
 import Carousel from "react-material-ui-carousel";
 import Item from "../sections/Item";
+import MediaCard from "../sections/MediaCard";
 
 const Home = () => {
   const items = [
@@ -80,6 +81,21 @@ const Home = () => {
             See More {">>"}
           </p>
         </Link>
+      </div>
+      <h1 className="section-heading"> Sample Packs </h1>
+      <div className="sample-packs">
+        <MediaCard
+          image="https://public-files.gumroad.com/q80x6wnck50ahmntbpnubcwjl6d9"
+          title="Corrupted Hero [STEMS]"
+          description="The stems for my Corrupted Hero project!"
+          link="https://vtm1ns.gumroad.com/l/sviee?layout=profile"
+        />
+        <MediaCard
+          image={Default}
+          title="Coming Soon..."
+          description="More packs coming soon!"
+          link="https://vtm1ns.gumroad.com/"
+        />
       </div>
     </>
   );

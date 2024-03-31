@@ -460,6 +460,29 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
   font-size: 1.5rem;
 }
 
+/* Sample Packs */
+.sample-packs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  width: 80%;
+  margin: auto;
+}
+
+@media screen and (max-width: 1300px) {
+  .sample-packs div {
+    flex-basis: calc(50% - 12px);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .sample-packs div {
+    flex-basis: 80%;
+  }
+}
+
 /* Footer Styling */
 footer {
   margin-top: 50px;
