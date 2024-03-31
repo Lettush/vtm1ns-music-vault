@@ -1,8 +1,19 @@
+import { useEffect, useState } from "react";
+import YouTube from "../sections/YouTube";
+
 const Music = () => {
+  const [latest, setLatest] = useState("");
+  useEffect(() => {
+    fetch(
+      "https://www.googleapis.com/youtube/v3/search?key=AIzaSyB05ZW_6lgBCtA1UtoRKP0uSG52HWpWtsI&channelId=UC8H9civC3067vONXbBNDmrw&part=id&order=date&maxResults=1"
+    )
+      .then((res) => res.json())
+      .then((data) => setLatest(data.items[0].id.videoId));
+  }, []);
   return (
     <>
       <h1 className="section-heading">Music</h1>
-      <div className="spotify">
+      <div className="spotify column-layout">
         <div>
           <h1>Spotify</h1>
         </div>
@@ -13,10 +24,17 @@ const Music = () => {
           width="100%"
           height="352"
           frameBorder="0"
-          allowfullscreen=""
+          allowFullScreen=""
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           loading="lazy"
         ></iframe>
+      </div>
+      <hr className="section-line" />
+      <div className="youtube column-layout">
+        <YouTube link={`https://www.youtube.com/watch?v=${latest}`} className="vid"/>
+        <div className="text">
+          <h1>YouTube</h1>
+        </div>
       </div>
     </>
   );

@@ -42,6 +42,12 @@ a {
   text-decoration: none;
 }
 
+.section-line {
+  width: 80%;
+  margin: 30px auto;
+  border: 1px solid #ffffff42;
+}
+
 /* Header Styling */
 header {
   width: 100%;
@@ -300,25 +306,48 @@ nav svg {
 }
 
 /* Spotify */
-.spotify {
+.column-layout {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 80%;
   margin: auto;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
-.spotify div, .spotify iframe {
+.column-layout div,
+.column-layout iframe {
   flex-basis: 50%;
 }
 
 @media screen and (max-width: 700px) {
-  .spotify {
+  .column-layout {
     flex-direction: column;
   }
-  
-  .spotify div {
+
+  .column-layout div {
     margin-bottom: 30px;
+  }
+}
+
+.youtube div:first-child {
+  width: 90% !important;
+  aspect-ratio: 16/9;
+  margin: auto;
+}
+
+@media screen and (max-width: 660px) {
+  .spotify {
+    margin-bottom: 0;
+  }
+
+  .youtube div:first-child {
+    order: 2;
+  }
+
+  .youtube div:nth-child(2) {
+    order: 1;
   }
 }
 
