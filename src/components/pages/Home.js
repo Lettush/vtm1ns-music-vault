@@ -47,7 +47,9 @@ const Home = () => {
           Hop, and Experimental sounds.
         </div>
       </header>
-      <h1 className="section-heading"> Works </h1>
+      <h1 className="section-heading">
+        <span> Works </span>
+      </h1>
       <div className="works">
         <Carousel>
           {items.map((item, i) => (
@@ -55,7 +57,9 @@ const Home = () => {
           ))}
         </Carousel>
       </div>
-      <h1 className="section-heading"> Samples </h1>
+      <h1 className="section-heading">
+        <span> Samples </span>
+      </h1>
       <div className="samples">
         <Link to="/music/1">
           <img
@@ -82,7 +86,9 @@ const Home = () => {
           </p>
         </Link>
       </div>
-      <h1 className="section-heading"> Sample Packs </h1>
+      <h1 className="section-heading">
+        <span> Sample Packs </span>
+      </h1>
       <div className="sample-packs">
         <MediaCard
           image="https://public-files.gumroad.com/q80x6wnck50ahmntbpnubcwjl6d9"

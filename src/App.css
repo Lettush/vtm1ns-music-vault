@@ -36,6 +36,25 @@ body {
   text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.695);
   letter-spacing: 0.2rem;
   margin: 40px 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-heading span {
+  background-color: black;
+  padding: 10px;
+  z-index: 1;
+}
+
+.section-heading::before {
+  content: "";
+  border: 1px solid #ffffff42;
+  position: absolute;
+  margin: auto;
+  width: 80%;
+  z-index: 0;
 }
 
 a {
@@ -358,7 +377,8 @@ nav svg {
     flex-direction: column;
   }
 
-  .vid, .spotify{
+  .vid,
+  .spotify {
     height: 310px;
   }
 
