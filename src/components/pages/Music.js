@@ -17,6 +17,7 @@ const Music = () => {
       <div className="spotify column-layout">
         <div>
           <h1>Spotify</h1>
+          <p>5,000+ Monthly Listeners</p>
         </div>
         <iframe
           title="spotify-frame"
@@ -36,6 +37,7 @@ const Music = () => {
         />
         <div className="text">
           <h1>YouTube</h1>
+          <p>2,000+ Subscribers</p>
         </div>
       </div>
     </>

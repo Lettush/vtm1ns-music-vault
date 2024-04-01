@@ -1,9 +1,13 @@
 import Default from "../../assets/images/default.jpg";
 import SeeMore from "../../assets/images/placeholder.png";
+import Discord from "../../assets/images/discord.webp";
 import { Link } from "react-router-dom";
 import Carousel from "react-material-ui-carousel";
 import Item from "../sections/Item";
 import MediaCard from "../sections/MediaCard";
+import { Button } from "@mui/material";
+import { YouTube, Twitter } from "@mui/icons-material";
+import Tooltip from "@mui/material/Tooltip";
 
 const Home = () => {
   const items = [
@@ -41,10 +45,37 @@ const Home = () => {
           Music Vault
         </h1>
         <div className="bio">
-          vtm1ns is a burgeoning music producer hailing from the bedroom studio
-          scene. Despite limited mainstream success thus far, vtm1ns has been
-          honing his craft for over 5 years, experimenting with EDM, Trap, Hip
-          Hop, and Experimental sounds.
+          <p>
+            vtm1ns is a burgeoning music producer hailing from the bedroom
+            studio scene. Despite limited mainstream success thus far, vtm1ns
+            has been honing his craft for over 5 years, experimenting with EDM,
+            Trap, Hip Hop, and Experimental sounds.
+          </p>
+          <div>
+            <a
+              href="https://youtube.com/c/vtm1ns"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Button size="large" color="white">
+                <YouTube fontSize="large" />
+              </Button>
+            </a>
+            <a
+              href="https://twitter.com/vtm1ns"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Button size="large" color="white">
+                <Twitter fontSize="large" />
+              </Button>
+            </a>
+            <Tooltip title="Discord: lettush">
+              <Button size="large" color="white">
+                <img src={Discord} alt="Discord" width="35px" />
+              </Button>
+            </Tooltip>
+          </div>
         </div>
       </header>
       <h1 className="section-heading">
