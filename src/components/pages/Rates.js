@@ -24,7 +24,7 @@ const Rates = () => {
   return (
     <>
       <div className="music-rates">
-        <h1 className="section-heading">
+        <h1 className="section-heading" style={{ marginTop: 0 }}>
           <span>Commission Rates</span>
         </h1>
         <div className="comm-tables">
@@ -32,7 +32,9 @@ const Rates = () => {
             <Table aria-label="rates table">
               <TableHead>
                 <TableRow>
-                  <TableCell colSpan={2} align="center">Songs</TableCell>
+                  <TableCell colSpan={2} align="center">
+                    Songs
+                  </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>Price</TableCell>
@@ -58,7 +60,9 @@ const Rates = () => {
             <Table aria-label="rates table">
               <TableHead>
                 <TableRow>
-                  <TableCell colSpan={2} align="center">Visualizers</TableCell>
+                  <TableCell colSpan={2} align="center">
+                    Visualizers
+                  </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>Price</TableCell>
