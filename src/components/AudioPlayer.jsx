@@ -4,6 +4,8 @@ import {
   PlayCircleOutlineRounded,
   PauseCircleOutlineRounded,
 } from "@mui/icons-material";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 
 const formWaveSurferOptions = (ref) => ({
   container: ref,
@@ -28,6 +30,7 @@ export default function AudioPlayer({ audioFile, name }) {
   // const [, setMuted] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Initialize WaveSurfer and set up event listeners
   useEffect(() => {
@@ -42,6 +45,7 @@ export default function AudioPlayer({ audioFile, name }) {
     wavesurfer.current.on("ready", () => {
       setVolume(wavesurfer.current.getVolume());
       setDuration(wavesurfer.current.getDuration());
+      setIsLoading(!isLoading);
     });
 
     // Update current time in state as audio plays
@@ -77,29 +81,39 @@ export default function AudioPlayer({ audioFile, name }) {
   // };
 
   return (
-    <div className="song-group">
-      {/* Play/Pause button */}
-      <div className="audio-info">
-        <div className="play-pause">
-          {!playing ? (
-            <PlayCircleOutlineRounded onClick={handlePlayPause} />
-          ) : (
-            <PauseCircleOutlineRounded onClick={handlePlayPause} />
-          )}
+    <>
+      {isLoading && (
+        <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "10px"}}>
+          <h3>Loading...</h3>
+          <CircularProgress color="white"/>
+        </Box>
+      )}
+      <div
+        className="song-group"
+        style={isLoading ? { display: "none" } : { display: "block" }}
+      >
+        {/* Play/Pause button */}
+        <div className="audio-info">
+          <div className="play-pause">
+            {!playing ? (
+              <PlayCircleOutlineRounded onClick={handlePlayPause} />
+            ) : (
+              <PauseCircleOutlineRounded onClick={handlePlayPause} />
+            )}
+          </div>
+          <div>
+            <h2>{name}</h2>
+          </div>
         </div>
-        <div>
-          <h2>{name}</h2>
+
+        <div id="waveform" ref={waveformRef} style={{ width: "100%" }}></div>
+
+        <div className="time">
+          {formatTime(currentTime)} / {formatTime(duration)}
         </div>
-      </div>
 
-      <div id="waveform" ref={waveformRef} style={{ width: "100%" }}></div>
-
-      <div className="time">
-        {formatTime(currentTime)} / {formatTime(duration)}
-      </div>
-
-      {/* Volume slider */}
-      {/* <input
+        {/* Volume slider */}
+        {/* <input
         type="range"
         name="volume"
         id="volume"
@@ -109,6 +123,7 @@ export default function AudioPlayer({ audioFile, name }) {
         value={muted ? 0 : volume}
         onChange={(e) => handleVolumeChange(parseFloat(e.target.value))}
       /> */}
-    </div>
+      </div>
+    </>
   );
 }
