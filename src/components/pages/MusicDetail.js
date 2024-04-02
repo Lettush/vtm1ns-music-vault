@@ -2,8 +2,8 @@ import AudioPlayer from "../AudioPlayer";
 import Audio1 from "../../assets/audio/1.mp3";
 import Audio2 from "../../assets/audio/2.mp3";
 import Audio3 from "../../assets/audio/3.ogg";
-import Audio4 from "../../assets/audio/4.wav";
-import Audio5 from "../../assets/audio/5.wav";
+import Audio4 from "../../assets/audio/4.mp3";
+import Audio5 from "../../assets/audio/5.mp3";
 import Audio6 from "../../assets/audio/6.mp3";
 import { useParams } from "react-router-dom";
 
