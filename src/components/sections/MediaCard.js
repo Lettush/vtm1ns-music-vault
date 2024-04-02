@@ -18,7 +18,7 @@ export default function MediaCard({ image, title, description, link }) {
         </Typography>
       </CardContent>
       <CardActions>
-        <a href={link}>
+        <a href={link} target="_blank" rel="noreferrer">
           <Button size="small">See More</Button>
         </a>
       </CardActions>
